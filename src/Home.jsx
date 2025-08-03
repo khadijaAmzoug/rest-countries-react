@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
-  // حالات الدول، بحث، فلتر...
+
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState('');
   const [region, setRegion] = useState('');
   
-  // حالة الوضع الليلي
+
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true';
   });
@@ -21,7 +21,6 @@ export default function Home() {
       .catch(err => console.error('Failed to fetch countries:', err));
   }, []);
 
-  // تفعيل/تعطيل الوضع الليلي وتخزينه
   const toggleDarkMode = () => {
     setDarkMode(prev => {
       localStorage.setItem('darkMode', !prev);
